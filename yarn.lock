@@ -46,6 +46,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/webgl2@0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@types/webgl2/-/webgl2-0.0.4.tgz#c3b0f9d6b465c66138e84e64cb3bdf8373c2c279"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
