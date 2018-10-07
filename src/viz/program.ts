@@ -29,7 +29,6 @@ export default class Program extends Resource {
     private readonly uniformSetters: IUniformToSetterMap = {};
     private readonly textureUnits: Texture2d[] = [];
     private readonly viewport = new Float32Array(2);
-    private clearColor = 0xffffffff;
 
     get vertexArray() {
         const { gl } = this;
@@ -101,15 +100,11 @@ export default class Program extends Resource {
         return this;
     }
 
-    public setClearColor(color: number) {
-        this.clearColor = color;
-        return this;
-    }
-
     public clear() {
         const { gl } = this;
         gl.clearColor(0, 0, 0, 0);
         gl.enable(gl.DEPTH_TEST);
+        // tslint:disable-next-line:no-bitwise
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
         return this;
     }
