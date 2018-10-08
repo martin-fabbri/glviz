@@ -6,6 +6,7 @@ const Navigation = () => {
         <div>
             <NavLink to={'/model1'}>01 Simple Rect</NavLink>
             <NavLink to={'/model2'}>02 Mozilla</NavLink>
+            <NavLink to={'/model3'}>03 FWGL[01] 1st Vertex</NavLink>
         </div>
     );
 };

@@ -145,6 +145,11 @@ export default class Program extends Resource {
         //         throw new Error(`Error linking: ${gl.getProgramInfoLog(this.handle)}`);
         //     }
         // }
+
+        gl.detachShader(program, vertexShader.shader);
+        gl.detachShader(program, fragmentShader.shader);
+        gl.deleteShader(vertexShader.shader);
+        gl.deleteShader(fragmentShader.shader);
     }
 
     private buildAttributeLocations() {
