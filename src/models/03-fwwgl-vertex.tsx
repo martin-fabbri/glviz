@@ -17,8 +17,10 @@ const FRAGMENT_SHADER = `#version 300 es
     precision mediump float;
     out vec4 outColor;
     
+    uniform vec3 uPointColor;
+    
     void main() {
-      outColor = vec4(1.0, 0.0, 0.0, 1.0);
+      outColor = vec4(uPointColor, 1.0);
     }
 `;
 
@@ -53,6 +55,7 @@ class Model extends React.Component {
             .clear()
             .setBuffers({ aPosition: positionBuffer })
             .setUniforms({
+                uPointColor: [0.0, 1.0, 0.0],
                 uPointSize: 50.0,
             });
 
