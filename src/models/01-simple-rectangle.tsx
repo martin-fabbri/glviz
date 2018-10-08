@@ -38,6 +38,7 @@ out vec4 outColor;
 
 void main() {
   outColor = u_color;
+  
 }
 `;
 
@@ -46,9 +47,11 @@ class Model extends React.Component {
     private readonly canvasRef: React.RefObject<HTMLCanvasElement> = React.createRef();
 
     public componentDidMount() {
+        console.log('component did mount');
         const gl = this.canvasRef.current!.getContext('webgl2');
 
         if (!gl) {
+            console.error('No GL.');
             return;
         }
 
@@ -79,11 +82,11 @@ class Model extends React.Component {
                 u_resolution: resolutionUniform
             });
 
-        gl!.drawArrays(gl!.TRIANGLES, 0, 6);
+        gl.drawArrays(gl!.TRIANGLES, 0, 6);
     }
 
     public render() {
-        return <canvas ref={this.canvasRef} width={500} height={500} />;
+        return <canvas ref={this.canvasRef} width={500} height={500} style={{width: 500, height: 500}}/>;
     }
 }
 
